@@ -81,7 +81,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
   # on envoie un document html dynamique
   def send_html(self,content):
      headers = [('Content-Type','text/html;charset=utf-8')]
-     html = '<!DOCTYPE html><title>{}</title><meta charset="utf-8">{}' \
+     html = '<!DOCTYPE html><title>{}</title><link rel="stylesheet" href="/test.css"><meta charset="utf-8">{}' \
          .format(self.path_info[0],content)
      self.send(html,headers)
 
